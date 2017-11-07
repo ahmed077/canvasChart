@@ -19,10 +19,6 @@ ctx.strokeStyle = "#2196f3";
 ctx.stroke();
 ctx.fillStyle = 'red';
 
-drawBezire(0, h / 2, 50, -30 + h / 2, 100, h / 2, 100, h / 2);
-drawBezire(100, h / 2, 50 + 100, -30 + h / 2, 100 + 100, h / 2, 100 + 100, h / 2);
-drawBezire(200, h / 2, 50 + 200, -30 + h / 2, 100 + 200, h / 2, 100 + 200, h / 2);
-
 var XHR = new XMLHttpRequest(),
     points;
 XHR.open('GET', './points.txt', true);
@@ -57,32 +53,11 @@ function animate() {
     }, 5);
     
 }
-function drawBezire(sx, sy, cpx1, cpy1, cpx2, cpy2, ex, ey) {
-    'use strict';
-    ctx.save();
-//    addPoint(sx, sy);
-//    addPoint(cpx1, cpy1);
-//    addPoint(cpx2, cpy2);
-//    addPoint(ex, ey);
-    ctx.closePath();
-    ctx.beginPath();
-    ctx.moveTo(sx, sy);
-    ctx.bezierCurveTo(cpx1, cpy1, cpx2, cpy2, ex, ey);
-    ctx.strokeStyle = 'red';
-    ctx.stroke();
-    ctx.closePath();
-    ctx.restore();
-}
-
 function addPoint(x, y) {
     'use strict';
     ctx.closePath();
     ctx.save();
     ctx.ellipse(x, y, 5, 5, 0, 0, Math.PI * 2);
-//    ctx.font = '20px Arial';
-//    ctx.fillText("(" + x + ", " + y + ")", x, y - 10);
-//    ctx.strokeStyle = "#fff";
-//    ctx.strokeText("(" + x + ", " + y + ")", x, y - 10);
     ctx.closePath();
     ctx.restore();
 }
