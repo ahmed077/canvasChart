@@ -25,7 +25,7 @@ drawBezire(200, h / 2, 50 + 200, -30 + h / 2, 100 + 200, h / 2, 100 + 200, h / 2
 
 var XHR = new XMLHttpRequest(),
     points;
-XHR.open('GET', 'points.txt', true);
+XHR.open('GET', './points.txt', true);
 XHR.send();
 XHR.onreadystatechange = function () {
     'use strict';
